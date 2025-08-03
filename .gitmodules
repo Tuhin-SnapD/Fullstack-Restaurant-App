@@ -1,0 +1,9 @@
+[submodule "Server-Restaurant"]
+	path = Server-Restaurant
+	url = https://github.com/Tuhin-SnapD/Server-Restaurant.git
+[submodule "React-Restaurant-App"]
+	path = React-Restaurant-App
+	url = https://github.com/Tuhin-SnapD/React-Restaurant-App.git
+[submodule "Angular-Restaurant-App"]
+	path = Angular-Restaurant-App
+	url = https://github.com/Tuhin-SnapD/Angular-Restaurant-App.git

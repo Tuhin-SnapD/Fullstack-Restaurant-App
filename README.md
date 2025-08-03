@@ -19,6 +19,7 @@ A comprehensive restaurant management system featuring a Node.js/Express backend
 - [Deployment](#deployment)
 - [Troubleshooting](#troubleshooting)
 - [Contributing](#contributing)
+- [Submodule Management](#submodule-management)
 
 ## 🎯 Overview
 
@@ -74,9 +75,9 @@ Before you begin, ensure you have the following installed:
 For experienced developers who want to get everything running quickly:
 
 ```bash
-# 1. Clone the repository
-git clone <repository-url>
-cd Restaurant
+# 1. Clone the repository with all submodules
+git clone --recursive https://github.com/Tuhin-SnapD/Fullstack-Restaurant-App.git
+cd Fullstack-Restaurant-App
 
 # 2. Install MongoDB (if not already installed)
 # Windows: Download from https://www.mongodb.com/try/download/community
@@ -104,6 +105,19 @@ npm start
 cd ../Angular-Restaurant-App
 npm install
 npm start
+```
+
+### 🔗 Alternative: Clone Without Submodules
+
+If you prefer to clone without submodules initially:
+
+```bash
+# Clone main repository only
+git clone https://github.com/Tuhin-SnapD/Fullstack-Restaurant-App.git
+cd Fullstack-Restaurant-App
+
+# Initialize and update submodules later
+git submodule update --init --recursive
 ```
 
 ## 📖 Detailed Setup
@@ -384,9 +398,14 @@ curl http://localhost:8000/promotions
 
 ## 📁 Project Structure
 
+This repository uses Git submodules to organize the three main components. Each component is maintained as a separate repository but linked together in this main repository.
+
 ```
-Restaurant/
-├── Server-Restaurant/           # Backend API
+Fullstack-Restaurant-App/
+├── README.md                    # Main documentation
+├── SUBMODULE_SETUP.md          # Submodule setup guide
+├── .gitmodules                 # Git submodule configuration
+├── Server-Restaurant/          # Backend API (Git submodule)
 │   ├── app.js                  # Main application file
 │   ├── config.js               # Configuration settings
 │   ├── authenticate.js         # Authentication middleware
@@ -406,7 +425,7 @@ Restaurant/
 │   ├── sessions/               # Session storage
 │   └── populateDb.js           # Database seeding
 │
-├── React-Restaurant-App/       # React Frontend
+├── React-Restaurant-App/       # React Frontend (Git submodule)
 │   ├── src/
 │   │   ├── components/         # React components
 │   │   │   ├── HeaderComponent.js
@@ -427,7 +446,7 @@ Restaurant/
 │   │       └── baseUrl.js
 │   └── public/
 │
-└── Angular-Restaurant-App/     # Angular Frontend
+└── Angular-Restaurant-App/     # Angular Frontend (Git submodule)
     ├── src/
     │   ├── app/
     │   │   ├── components/     # Angular components
@@ -450,6 +469,16 @@ Restaurant/
     └── angular.json
 ```
 
+### 🔗 Submodule Repositories
+
+Each component is maintained as a separate repository:
+
+- **Backend API**: [Server-Restaurant](https://github.com/Tuhin-SnapD/Server-Restaurant)
+- **React Frontend**: [React-Restaurant-App](https://github.com/Tuhin-SnapD/React-Restaurant-App)
+- **Angular Frontend**: [Angular-Restaurant-App](https://github.com/Tuhin-SnapD/Angular-Restaurant-App)
+
+For detailed information about working with submodules, see [SUBMODULE_SETUP.md](SUBMODULE_SETUP.md).
+
 ## 🛠️ Development
 
 ### Development Workflow
@@ -470,6 +499,52 @@ Restaurant/
    - Backend API: `http://localhost:8000`
    - React App: `http://localhost:3000`
    - Angular App: `http://localhost:4200`
+
+### 🔄 Working with Submodules
+
+When working with this repository, you'll need to manage submodules:
+
+```bash
+# Check submodule status
+git submodule status
+
+# Update all submodules to latest commits
+git submodule update --remote
+
+# Pull latest changes and update submodules
+git pull origin main
+git submodule update --init --recursive
+```
+
+For detailed submodule instructions, see [SUBMODULE_SETUP.md](SUBMODULE_SETUP.md).
+
+## 🔗 Submodule Management
+
+This repository uses Git submodules to organize the three main components. Each component is maintained as a separate repository but linked together in this main repository.
+
+### Quick Submodule Commands
+
+```bash
+# Clone with all submodules
+git clone --recursive https://github.com/Tuhin-SnapD/Fullstack-Restaurant-App.git
+
+# Initialize submodules after cloning
+git submodule update --init --recursive
+
+# Update all submodules to latest commits
+git submodule update --remote
+
+# Check submodule status
+git submodule status
+```
+
+### Individual Component Repositories
+
+- **[Server-Restaurant](https://github.com/Tuhin-SnapD/Server-Restaurant)**: Node.js/Express backend API
+- **[React-Restaurant-App](https://github.com/Tuhin-SnapD/React-Restaurant-App)**: React frontend with Redux
+- **[Angular-Restaurant-App](https://github.com/Tuhin-SnapD/Angular-Restaurant-App)**: Angular frontend with Material Design
+
+For comprehensive submodule documentation, see [SUBMODULE_SETUP.md](SUBMODULE_SETUP.md).
 
 ### Code Quality
 
@@ -727,8 +802,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 For support and questions:
 
 - **Email**: support@restaurant-app.com
-- **Issues**: [GitHub Issues](https://github.com/your-username/Restaurant/issues)
-- **Documentation**: [Project Wiki](https://github.com/your-username/Restaurant/wiki)
+- **Issues**: [GitHub Issues](https://github.com/Tuhin-SnapD/Fullstack-Restaurant-App/issues)
+- **Documentation**: [Project Wiki](https://github.com/Tuhin-SnapD/Fullstack-Restaurant-App/wiki)
+- **Main Repository**: [Fullstack-Restaurant-App](https://github.com/Tuhin-SnapD/Fullstack-Restaurant-App)
 
 ---
 

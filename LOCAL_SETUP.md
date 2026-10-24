@@ -36,11 +36,17 @@ Or start pieces individually:
 
 ## Runtime tools (no admin install needed)
 
-Portable copies live in `%LOCALAPPDATA%\mongodb-restaurant`:
+The launcher uses a Node 12 portable runtime for the Angular 6 app. It checks
+`%LOCALAPPDATA%\mongodb-restaurant\node-v12.22.12-win-x64` first, then the
+ignored project-local `.runtime\node-v12.22.12-win-x64` copy. The project-local
+copy is downloaded from the official Node.js v12.22.12 archive when needed.
+
+MongoDB data lives in `%LOCALAPPDATA%\mongodb-restaurant`:
 
 - MongoDB Community Server 6.0.19 (`mongodb\...\bin\mongod.exe`), data in `data\`
-- Node.js 12.22.12 (`node-v12.22.12-win-x64\`), required only by the
-  Angular 6 app because `node-sass@4` has no binaries for Node 24.
+
+Node.js 12.22.12 is required only by the Angular 6 app because `node-sass@4`
+has no binaries for Node 24.
 
 MongoDB data is persistent. Re-seed at any time with:
 
@@ -51,9 +57,8 @@ npm run populate
 
 ## Configuration
 
-- `Server-Restaurant/.env` was created from `env.example` with local dev
-  secrets and `PORT=8002`.
+- `Server-Restaurant/.env` is created from `env.example` when missing; set
+  local development secrets and `PORT=8002` there as needed. The `.env` file
+  is ignored by Git.
 - `React-Restaurant-App/src/shared/baseUrl.js` -> `http://localhost:8002/`
 - `Angular-Restaurant-App/src/app/shared/baseurl.ts` -> `http://localhost:8002/`
-
-These three files are modified relative to their upstream submodule commits.

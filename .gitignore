@@ -1,0 +1,5 @@
+# Downloaded local runtimes used to run the legacy Angular app.
+.runtime/
+
+# Local session and development logs.
+*.log
